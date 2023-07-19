@@ -1,0 +1,13 @@
+Instruction
+1)	Download zip file
+2)	Unzip file
+3)	Import *.yaml as cloud template
+4)	Import *.zip as abx
+5)	Create a compute provision blocking subscription to run abx
+6)	Create a deployment request
+7)	Supply an ova image other than the default
+8)	Supply user inputs to override ovf property values
+a.	User inputs must be string type
+9)	Submit request
+10)	ovf properties appear under vm custom properties in UI later in vm build
+11)	confirm ovf properties applied to vm

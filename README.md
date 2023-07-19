@@ -1,1 +1,0 @@
-# ova-deployment-on-demand

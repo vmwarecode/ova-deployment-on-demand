@@ -1,0 +1,6 @@
+User can use this cloud template to create any appliance on demand.  The cloud template has two inputs: 
+
+1)	imageRef – an online ova file reference
+2)	ovfProperties – a list of ovf properties that the user wants update
+
+An ABX action retrieves ovf properties in image via a private API call and adds them to vm custom properties before cloning.
