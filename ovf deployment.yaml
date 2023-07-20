@@ -1,0 +1,39 @@
+formatVersion: 1
+properties:
+  __skipCleanupOnFailedRequest: true
+inputs:
+  ovfProperties:
+    type: array
+    title: Ovf properties
+    description: user override of ovf property values
+    default:
+      - key: varoot-password
+        value: 123abc
+    items:
+      type: object
+      properties:
+        key:
+          type: string
+        value:
+          type: string
+  imageRef:
+    type: string
+    default: https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.ova
+resources:
+  Cloud_vSphere_Machine_1:
+    type: Cloud.vSphere.Machine
+    metadata:
+      layoutPosition:
+        - 0
+        - 0
+    properties:
+      imageRef: ${input.imageRef}
+      ovfProperties:
+        - key: va-ssh-enabled
+          value: 'true'
+        - key: ova-property-inputs
+          value: ${to_json(input.ovfProperties)}
+      cpuCount: 2
+      totalMemoryMB: 4092
+      constraints:
+        - tag: cmbu-pvc:soft
